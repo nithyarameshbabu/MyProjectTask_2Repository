@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style2.css">
+    <script defer src="javascript.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40%; /* Adjust the width as needed */
+            height: 80vh; /* Adjust the height as needed */
+            margin: auto; /* Center the container horizontally */
+            padding: 20px; /* Add padding for space inside the container */
+        }
+
+        h1, .add-task, #taskList {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        .add-task {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 100%; /* Make the input take up 100% of the available width */
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 50;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between; /* Equal spacing between items */
+            align-items: center; /* Center items vertically */
+            border-bottom: 1px solid #eee;
+            padding: 10px;
+        }
+
+        li span {
+            flex: 1;
+        }
+
+        .delete {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        /* Additional styles for the table */
+        table {
+            width: 80%; /* Adjust the width as needed */
+            margin-top: 20px;
+            color: #fff;
+            border-collapse: collapse;
+            margin: auto; /* Center the table horizontally */
+        }
+
+        th, td {
+            padding: 15px; /* Adjust padding for content spacing */
+            text-align: center;
+            border: 1px solid #fff;
+        }
+
+        th {
+            background-color: #fdfdfd;
+            color: #000;
+        }
+
+        th.task, th.deadline, th.priority, th.label {
+            width: 25%; /* Adjust width for each column */
+        }
+    </style>
+</head>
+
+<body>
+    <video autoplay muted loop>
+        <!-- Replace 'your-video-file.mp4' with the path to your video file -->
+        <source src="video_2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="add-task">
+            <input type="text" id="taskInput" placeholder="Add a new task">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="taskList">
+            <!-- Example task with placeholders -->
+            <table cellpadding="10">
+                <tr>
+                    <th class="task">Task</th>
+                    <th class="deadline">Deadline</th>
+                    <th class="priority">Priority</th>
+                    <th class="label">Label</th>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
+        </ul>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+
+</html>
